@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Pribadi Mohammad Wahyu Sutanto</title>
+    <title>El Zutanco - Web Pribadi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
         :root {
-            --primary-color: #ff9479; /* Neon Green */
-            --bg-color-dark: #5ce2ff; /* Dark Background */
-            --bg-color-light: #5ce2ff; /* Slightly Lighter Dark */
-            --accent-color: #ff9479; /* white color */
-            --widget-bg: #ffffff;
-            --text-color: #000000;
-            --shadow-color: #ffffff; /* Green shadow for glow effect */
+            --primary-color: #3a1c71;
+            --secondary-color: #d76d77;
+            --accent-color: #ffaf7b;
         }
 
         * {
@@ -23,199 +21,187 @@
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace; /* Hacker theme font */
-            background: radial-gradient(circle at top, var(--bg-color-dark), var(--bg-color-light));
-            color: var(--text-color);
-            height: 100vh;
-            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            color: #fff;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            position: relative;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
         }
 
         header {
-            background: var(--widget-bg);
-            color: var(--primary-color);
-            padding: 20px;
-            box-shadow: 0 4px 15px var(--shadow-color);
-            border-radius: 8px;
-            animation: fadeIn 1.2s ease-out;
-            position: relative;
             text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0; /* Menghapus efek lingkaran untuk membuat persegi */
+            object-fit: cover; /* Memastikan gambar sesuai dengan ukuran persegi */
+        }
+
+        .logo:hover {
+            transform: scale(1.05) rotate(5deg);
         }
 
         h1 {
-            font-size: 3em;
-            letter-spacing: 2px;
-            text-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
-            animation: pulseGlow 2s infinite;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        @keyframes pulseGlow {
-            0% { text-shadow: 0 0 10px var(--primary-color); }
-            50% { text-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color); }
-            100% { text-shadow: 0 0 10px var(--primary-color); }
-        }
-    .text {
-        backround: var(--widget-bg);
-    }
-        .container {
-            background: var(--widget-bg);
-            box-shadow: 0 4px 30px rgba(0, 255, 0, 0.15);
-            border-radius: 20px;
-            padding: 30px;
-            max-width: 800px;
-            width: 90%;
-            text-align: center;
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            color: var(--accent-color);
-        }
-
-        .widget {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .widget a {
-            text-decoration: none;
-            background: var(--accent-color);
-            padding: 15px;
-            width: 120px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            color: var(--bg-color-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .widget a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 15px rgba(255, 165, 0, 0.7);
-        }
-
-        .widget img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .widget a:hover img {
-            transform: rotate(360deg);
-        }
-
-        /* Particles */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            animation: floatUp 6s infinite ease-in-out;
+        .tagline {
+            font-size: 1.2rem;
             opacity: 0.8;
         }
 
-        @keyframes floatUp {
-            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .particle:nth-child(odd) {
-            background-color: var(--accent-color);
-            animation-delay: 2s;
+        .social-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex: 1 1 200px;
+            max-width: 250px;
         }
 
-        .particle:nth-child(3n) {
-            background-color: var(--text-color);
-            animation-delay: 4s;
+        .social-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Media Queries */
+        .social-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .social-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-item a:hover {
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2em;
+                font-size: 2.5rem;
             }
+            .social-item {
+                flex-basis: calc(50% - 1rem);
+            }
+        }
 
-            p {
-                font-size: 1.2em;
-            }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
-            .widget a {
-                padding: 12px;
-            }
-
-            .widget img {
-                width: 40px;
-                height: 40px;
-            }
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Selamat Datang di Halaman Pribadi Mohammad Wahyu Sutanto</h1>
-    </header>
-
     <div class="container">
-        <p>Kunjungi media sosial saya:</p>
-        <div class="widget">
-            <a href="https://wa.me/+6283179735240" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-                WhatsApp
-            </a>
-            <a href="https://youtube.com/@wahyuofc548?si=FzyXBB27pLjP84jy" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-                YouTube
-            </a>
-            <a href="https://www.tiktok.com/@whyustnt?_t=8psiCRRsLL8&_r=1" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIBv_78z_9MzcxwlU_VVBTQuUITP1iAH1XCctsyD70BLQ5DzRLM771Vfk&s=10" alt="TikTok">
-                TikTok
-            </a>
-            <a href="https://www.facebook.com/wahyuganssess" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-                Facebook
-            </a>
-            <a href="https://www.instagram.com/whyustnt?igsh=YzU1NGVlODEzOA==" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-                instagram
-            </a
-        </div>
+        <header>
+            <!-- Gambar persegi menggantikan teks WS -->
+            <div class="logo floating">
+                <img src="https://i.ibb.co.com/c2fXV9j/quality-restoration-20240929085225527.jpg" alt="Foto Profil">
+            </div>
+            <h1>HALLO!!!</h1>
+            <p class="tagline">Selamat datang di web pribadi saya</p>
+            <p> </p>
+            <p class="tagLine">Silahkan klik dibawah ini untuk mengetahui akun medsos saya lebih lanjut:</p>
+        </header>
+
+        <section class="social-links">
+            <!-- Social Media Links -->
+            <div class="social-item">
+                <i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/+6283179735240" target="_blank">WhatsApp</a>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-facebook"></i>
+                <a href="https://www.facebook.com/wahyuganssess" target="_blank">Facebook</a>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/whyustnt?igsh=YzU1NGVlODEzOA==" target="_blank">Instagram</a>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-tiktok"></i>
+                <a href="https://www.tiktok.com/@whyustnt?_t=8q73qYYPeqt&_r=1" target="_blank">TikTok</a>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-youtube"></i>
+                <a href="https://youtube.com/@wahyuofc548?si=dse5tA9RJboW6QHK" target="_blank">YouTube</a>
+            </div>
+        </section>
     </div>
 
-    <div class="particles">
-        <div class="particle" style="left: 5%;"></div>
-        <div class="particle" style="left: 15%; width: 7px; height: 7px;"></div>
-        <div class="particle" style="left: 25%;"></div>
-        <div class="particle" style="left: 35%; width: 12px; height: 12px;"></div>
-        <div class="particle" style="left: 45%;"></div>
-        <div class="particle" style="left: 55%; width: 8px; height: 8px;"></div>
-        <div class="particle" style="left: 65%;"></div>
-        <div class="particle" style="left: 75%; width: 9px; height: 9px;"></div>
-        <div class="particle" style="left: 85%;"></div>
-        <div class="particle" style="left: 95%; width: 6px; height: 6px;"></div>
-    </div>
+    <script>
+        document.querySelectorAll('.social-item').forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const bounds = item.getBoundingClientRect();
+                const mouseX = e.clientX - bounds.left;
+                const mouseY = e.clientY - bounds.top;
+                const rotateY = (mouseX / bounds.width - 0.5) * 10;
+                const rotateX = (mouseY / bounds.height - 0.5) * -10;
+                
+                item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+    </script>
 </body>
 </html>
