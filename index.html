@@ -9,9 +9,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
         
         :root {
-            --primary-color: #3a1c71;
-            --secondary-color: #d76d77;
-            --accent-color: #ffaf7b;
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #fcb045;
+            --white-color: #fff;
+            --text-color: #f1f1f1;
+            --bg-dark: #1e1e2f;
         }
 
         * {
@@ -23,10 +26,9 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-            color: #fff;
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
@@ -34,131 +36,125 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: auto;
+            text-align: center;
         }
 
         header {
-            text-align: center;
             margin-bottom: 3rem;
         }
 
         .logo {
             width: 150px;
             height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: 700;
-            margin: 0 auto 1rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            border-radius: 200px;
+            overflow: hidden;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 1.5rem;
         }
 
         .logo img {
             width: 100%;
             height: 100%;
-            border-radius: 0; /* Menghapus efek lingkaran untuk membuat persegi */
-            object-fit: cover; /* Memastikan gambar sesuai dengan ukuran persegi */
-        }
-
-        .logo:hover {
-            transform: scale(1.05) rotate(5deg);
+            object-fit: cover;
         }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            color: var(--white-color);
         }
 
         .tagline {
             font-size: 1.2rem;
-            opacity: 0.8;
+            color: var(--white-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .date-time {
+            font-size: 1rem;
+            color: var(--white-color);
+            margin-bottom: 2rem;
         }
 
         .social-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 3rem;
+            gap: 1rem;
         }
 
         .social-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1.5rem;
+            background: var(--bg-dark);
+            padding: 1rem;
+            border-radius: 10px;
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            flex: 1 1 200px;
-            max-width: 250px;
+            width: 130px; /* Ukuran tetap agar semua item sama */
         }
 
         .social-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
         .social-item i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
         }
 
         .social-item a {
-            color: #fff;
+            color: var(--text-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-size: 0.9rem; /* Menyesuaikan ukuran teks agar tidak keluar dari kotak */
+            display: block; /* Agar teks dalam satu baris */
+            word-wrap: break-word; /* Agar teks panjang tidak keluar */
         }
 
         .social-item a:hover {
-            opacity: 0.8;
+            color: var(--accent-color);
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
+
             .social-item {
-                flex-basis: calc(50% - 1rem);
+                width: 110px; /* Ukuran lebih kecil untuk mobile */
+                padding: 0.8rem;
             }
-        }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+            .social-links {
+                gap: 0.5rem;
+            }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
+            .social-item i {
+                font-size: 1.8rem;
+            }
+
+            .social-item a {
+                font-size: 0.8rem; /* Menyesuaikan font di layar kecil */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <!-- Gambar persegi menggantikan teks WS -->
-            <div class="logo floating">
+            <!-- Gambar persegi -->
+            <div class="logo">
                 <img src="https://i.ibb.co.com/c2fXV9j/quality-restoration-20240929085225527.jpg" alt="Foto Profil">
             </div>
             <h1>HALLO!!!</h1>
             <p class="tagline">Selamat datang di web pribadi saya</p>
-            <p> </p>
-            <p class="tagLine">Silahkan klik dibawah ini untuk mengetahui akun medsos lebih lanjut:</p>
+            <p id="greeting"></p>
+            <p class="date-time" id="date-time"></p>
+            <p>Silahkan klik di bawah ini untuk mengetahui akun medsos lebih lanjut:</p>
         </header>
 
         <section class="social-links">
@@ -187,21 +183,42 @@
     </div>
 
     <script>
-        document.querySelectorAll('.social-item').forEach(item => {
-            item.addEventListener('mousemove', (e) => {
-                const bounds = item.getBoundingClientRect();
-                const mouseX = e.clientX - bounds.left;
-                const mouseY = e.clientY - bounds.top;
-                const rotateY = (mouseX / bounds.width - 0.5) * 10;
-                const rotateX = (mouseY / bounds.height - 0.5) * -10;
-                
-                item.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                item.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-            });
-        });
+        // Fungsi untuk menampilkan ucapan berdasarkan waktu
+        function getGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting = '';
+
+            if (hour >= 5 && hour < 12) {
+                greeting = 'Selamat Pagi!';
+            } else if (hour >= 12 && hour < 15) {
+                greeting = 'Selamat Siang!';
+            } else if (hour >= 15 && hour < 18) {
+                greeting = 'Selamat Sore!';
+            } else {
+                greeting = 'Selamat Malam!';
+            }
+
+            return greeting;
+        }
+
+        // Fungsi untuk menampilkan jam dan tanggal
+        function updateDateTime() {
+            const now = new Date();
+            const day = now.getDate();
+            const month = now.toLocaleString('default', { month: 'long' });
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const dateTimeString = `${day} ${month} ${year} | ${hours}:${minutes}:${seconds}`;
+            document.getElementById('date-time').textContent = dateTimeString;
+        }
+
+        // Menampilkan ucapan dan waktu secara dinamis
+        document.getElementById('greeting').textContent = getGreeting();
+        setInterval(updateDateTime, 1000); // Update jam setiap detik
     </script>
 </body>
 </html>
