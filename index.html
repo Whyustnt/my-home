@@ -6,15 +6,15 @@
     <title>El Zutanco - Web Pribadi</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            --primary-color: #1e3c72;
-            --secondary-color: #2a5298;
-            --accent-color: #fcb045;
-            --white-color: #fff;
-            --text-color: #f1f1f1;
-            --bg-dark: #1e1e2f;
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --white-color: #ecf0f1;
+            --text-color: #bdc3c7;
+            --bg-dark: #1a1a2e;
         }
 
         * {
@@ -24,8 +24,8 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
@@ -36,9 +36,14 @@
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: auto;
             text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         }
 
         header {
@@ -46,12 +51,18 @@
         }
 
         .logo {
-            width: 150px;
-            height: 150px;
-            border-radius: 200px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             overflow: hidden;
-            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-            margin: 0 auto 1.5rem;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+            margin: 0 auto 2rem;
+            border: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo img {
@@ -61,84 +72,94 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             color: var(--white-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--white-color);
             margin-bottom: 1.5rem;
         }
 
         .date-time {
-            font-size: 1rem;
-            color: var(--white-color);
+            font-size: 1.1rem;
+            color: var(--accent-color);
             margin-bottom: 2rem;
+            font-weight: 600;
         }
 
         .social-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .social-item {
             background: var(--bg-dark);
-            padding: 1rem;
-            border-radius: 10px;
+            padding: 1.2rem;
+            border-radius: 15px;
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 130px; /* Ukuran tetap agar semua item sama */
+            width: 140px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .social-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.05);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: var(--accent-color);
         }
 
         .social-item i {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-color);
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--white-color);
+            transition: transform 0.3s ease;
+        }
+
+        .social-item:hover i {
+            transform: scale(1.2);
         }
 
         .social-item a {
-            color: var(--text-color);
+            color: var(--white-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem; /* Menyesuaikan ukuran teks agar tidak keluar dari kotak */
-            display: block; /* Agar teks dalam satu baris */
-            word-wrap: break-word; /* Agar teks panjang tidak keluar */
+            font-size: 1rem;
+            display: block;
+            word-wrap: break-word;
+            transition: color 0.3s ease;
         }
 
-        .social-item a:hover {
-            color: var(--accent-color);
+        .social-item:hover a {
+            color: var(--bg-dark);
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .social-item {
-                width: 110px; /* Ukuran lebih kecil untuk mobile */
-                padding: 0.8rem;
+                width: 120px;
+                padding: 1rem;
             }
 
             .social-links {
-                gap: 0.5rem;
+                gap: 1rem;
             }
 
             .social-item i {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .social-item a {
-                font-size: 0.8rem; /* Menyesuaikan font di layar kecil */
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -146,19 +167,17 @@
 <body>
     <div class="container">
         <header>
-            <!-- Gambar persegi -->
             <div class="logo">
                 <img src="https://i.ibb.co.com/c2fXV9j/quality-restoration-20240929085225527.jpg" alt="Foto Profil">
             </div>
             <h1>HALLO!!!</h1>
             <p class="tagline">Selamat datang di web pribadi saya</p>
-            <p id="greeting"></p>
+            <p id="greeting" class="tagline"></p>
             <p class="date-time" id="date-time"></p>
-            <p>Silahkan klik di bawah ini untuk mengetahui akun medsos lebih lanjut:</p>
+            <p class="tagline">Klik ikon di bawah untuk terhubung:</p>
         </header>
 
         <section class="social-links">
-            <!-- Social Media Links -->
             <div class="social-item">
                 <i class="fab fa-whatsapp"></i>
                 <a href="https://wa.me/+6283179735240" target="_blank">WhatsApp</a>
@@ -183,42 +202,36 @@
     </div>
 
     <script>
-        // Fungsi untuk menampilkan ucapan berdasarkan waktu
         function getGreeting() {
             const now = new Date();
             const hour = now.getHours();
-            let greeting = '';
-
-            if (hour >= 5 && hour < 12) {
-                greeting = 'Selamat Pagi!';
-            } else if (hour >= 12 && hour < 15) {
-                greeting = 'Selamat Siang!';
-            } else if (hour >= 15 && hour < 18) {
-                greeting = 'Selamat Sore!';
-            } else {
-                greeting = 'Selamat Malam!';
-            }
-
-            return greeting;
+            const greetings = {
+                5: 'Selamat Pagi!',
+                12: 'Selamat Siang!',
+                15: 'Selamat Sore!',
+                18: 'Selamat Malam!'
+            };
+            return Object.entries(greetings).reduce((acc, [time, greeting]) => 
+                hour >= time ? greeting : acc, 'Selamat Malam!');
         }
 
-        // Fungsi untuk menampilkan jam dan tanggal
         function updateDateTime() {
             const now = new Date();
-            const day = now.getDate();
-            const month = now.toLocaleString('default', { month: 'long' });
-            const year = now.getFullYear();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-
-            const dateTimeString = `${day} ${month} ${year} | ${hours}:${minutes}:${seconds}`;
-            document.getElementById('date-time').textContent = dateTimeString;
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('date-time').textContent = now.toLocaleDateString('id-ID', options);
         }
 
-        // Menampilkan ucapan dan waktu secara dinamis
         document.getElementById('greeting').textContent = getGreeting();
-        setInterval(updateDateTime, 1000); // Update jam setiap detik
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
     </script>
 </body>
 </html>
